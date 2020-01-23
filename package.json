@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@bpanel/bpanel-ui": "0.0.19",
-    "@bpanel/bpanel-utils": "0.1.9",
+    "@bpanel/bpanel-utils": "git+https://github.com/mediciland/bpanel-utils.git#ACTUM-123",
     "@oipwg/fclient": "^0.1.7",
     "aphrodite": "1.2.5",
     "autoprefixer": "9.4.5",
