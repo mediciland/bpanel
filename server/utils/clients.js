@@ -3,6 +3,7 @@ const assert = require('bsert');
 const Config = require('bcfg');
 const { Network: BNetwork } = require('bcoin');
 const { Network: HSNetwork } = require('hsd');
+const { Network: FNetwork } = require('fcoin');
 const {
   NodeClient: BNodeClient,
   WalletClient: BWalletClient
@@ -11,6 +12,10 @@ const {
   NodeClient: HSNodeClient,
   WalletClient: HSWalletClient
 } = require('hs-client');
+const {
+  NodeClient: FNodeClient,
+  WalletClient: FWalletClient
+} = require('@oipwg/fclient');
 const MultisigClient = require('bmultisig/lib/client');
 
 const logClientInfo = (id, type, { ssl, host, port, network }) =>
@@ -57,6 +62,11 @@ function clientFactory(config) {
       Network = BNetwork;
       NodeClient = BNodeClient;
       WalletClient = BWalletClient;
+      break;
+    case 'flo':
+      Network = FNetwork;
+      NodeClient = FNodeClient;
+      WalletClient = FWalletClient;
       break;
     default:
       throw new Error(`Unrecognized chain ${chain}`);

@@ -117,6 +117,7 @@ async function testConfigOptions(config) {
     ['bcoin', 'bitcoin'],
     ['bcash', 'bitcoincash'],
     ['hsd', 'handshake']
+    ['fcoin', 'flo']
   ]);
 
   const clientErrors = new ClientErrors();

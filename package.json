@@ -45,6 +45,7 @@
   "dependencies": {
     "@bpanel/bpanel-ui": "0.0.19",
     "@bpanel/bpanel-utils": "0.1.9",
+    "@oipwg/fclient": "^0.1.7",
     "aphrodite": "1.2.5",
     "autoprefixer": "9.4.5",
     "base64-inline-loader": "1.1.1",
@@ -72,6 +73,7 @@
     "css-loader": "2.1.0",
     "effects-middleware": "1.0.1",
     "express": "4.16.2",
+    "fcoin": "^1.1.3",
     "file-loader": "2.0.0",
     "font-awesome": "4.7.0",
     "hs-client": "~0.0.4",
