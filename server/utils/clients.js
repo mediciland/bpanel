@@ -42,7 +42,7 @@ function clientFactory(config) {
   const id = config.str('id');
   assert(id, 'Client config must have an id');
 
-  // bitcoin, bitcoincash, handshake
+  // bitcoin, bitcoincash, handshake, or flo
   if (!config.str('chain'))
     logger.warning(
       `No chain set in configs for ${config.str('id')}, defaulting to 'bitcoin'`

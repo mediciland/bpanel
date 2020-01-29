@@ -107,7 +107,8 @@ module.exports = async (_config = {}) => {
   const networks = {
     bitcoin: require('bcoin/lib/protocol/networks'),
     bitcoincash: require('bcash/lib/protocol/networks'),
-    handshake: require('hsd/lib/protocol/networks')
+    handshake: require('hsd/lib/protocol/networks'),
+    flo: require('fcoin/lib/protocol/networks')
   };
 
   // Import express middlewares

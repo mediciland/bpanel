@@ -42,7 +42,7 @@ module.exports = function(env = {}) {
         // cache bcoin vendor files
         cacheGroups: {
           vendor: {
-            test: /[\\/]node_modules\/(bcoin|bcash|hsd)[\\/]/,
+            test: /[\\/]node_modules\/(bcoin|bcash|hsd|fcoin)[\\/]/,
             name: 'bcoin-vendor',
             chunks: 'all'
           }

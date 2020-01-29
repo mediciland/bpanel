@@ -116,7 +116,7 @@ async function testConfigOptions(config) {
   const agents = new Map([
     ['bcoin', 'bitcoin'],
     ['bcash', 'bitcoincash'],
-    ['hsd', 'handshake']
+    ['hsd', 'handshake'],
     ['fcoin', 'flo']
   ]);
 

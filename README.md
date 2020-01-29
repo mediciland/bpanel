@@ -98,6 +98,10 @@ this can take around 30 seconds as `npm install` is run for you.
 
 Discover all the plugins available by running `npm search bpanel` in your console.
 
+### Developing Plugins
+
+To develop plugins locally, place the folder of the plugin you are working on inside `webapp/plugins/local`, setup a "watching" compiler by `cd`ing into the folder of the plugin you are working on and running `npm run watch`. After you have the plugin compiler watching for changes, `cd` to the `bpanel` folder and run `npm start`.
+
 ## Configuration
 
 bPanel can be configured to connect to any bcoin-API compatible node you want to

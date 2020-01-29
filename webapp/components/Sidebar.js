@@ -108,21 +108,7 @@ class Sidebar extends PureComponent {
     const { theme } = this.props;
     const commitHash = (commit || '').slice(0, 7);
     return (
-      <div className={`${theme.sidebar.footer} mt-auto text-center`}>
-        <Header type="h5">bPanel</Header>
-        <Text
-          type="p"
-          className={`${theme.sidebar.footerText} version text-truncate`}
-        >
-          bpanel: {version}
-        </Text>
-        <Text
-          type="p"
-          className={`${theme.sidebar.footerText} commit text-truncate`}
-        >
-          UI: {commitHash}
-        </Text>
-      </div>
+      <div className={`${theme.sidebar.footer} mt-auto text-center`}></div>
     );
   }
 

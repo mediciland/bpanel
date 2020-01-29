@@ -60,11 +60,11 @@ pkg.version = require('./package.json').version;
  * @const {Array}
  */
 
-pkg.chains = ['bitcoin', 'bitcoincash', 'handshake'];
+pkg.chains = ['bitcoin', 'bitcoincash', 'handshake', 'flo'];
 
 /**
  * Supported user agents
  * @const {Array}
  */
 
-pkg.agents = ['bcoin', 'bcash', 'hsd'];
+pkg.agents = ['bcoin', 'bcash', 'hsd', 'fcoin'];
