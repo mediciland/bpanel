@@ -7,9 +7,10 @@ FROM mhart/alpine-node:latest AS base
 # because of bug introduced in npm 6.0.0
 
 EXPOSE 5000
-RUN mkdir -p /usr/src/app/dist
+RUN mkdir -p /bpanel/src/app/dist
+RUN mkdir -p /data/clients
 
-WORKDIR /usr/src/app
+WORKDIR /bpanel/src/app
 
 ENTRYPOINT [ "node" ]
 CMD [ "server" ]
@@ -28,7 +29,7 @@ RUN apk add --no-cache unbound-dev
 
 COPY package.json \
      package-lock.json \
-     /usr/src/app/
+     /bpanel/src/app/
 
 # Install dependencies
 FROM base AS build
@@ -43,13 +44,16 @@ RUN npm install budp
 
 # Bundle app
 FROM base
-COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
-COPY pkg.js /usr/src/app/pkg.js
-COPY vendor /usr/src/app/vendor
-COPY scripts /usr/src/app/scripts
-COPY configs /usr/src/app/configs
-COPY server /usr/src/app/server
-COPY webapp /usr/src/app/webapp
-RUN npm run build:dll && \
-    npm run preinstall --unsafe-perm && \
-    touch /root/.bpanel/clients/_docker.conf
+COPY --from=build /bpanel/src/app/node_modules /bpanel/src/app/node_modules
+COPY pkg.js /bpanel/src/app/pkg.js
+COPY vendor /bpanel/src/app/vendor
+COPY scripts /bpanel/src/app/scripts
+COPY configs /bpanel/src/app/configs
+COPY server /bpanel/src/app/server
+COPY webapp /bpanel/src/app/webapp
+COPY ci/config/start.sh /bpanel/start.sh
+RUN mkdir -p /bpanel/clients
+COPY ci/config/base-client.conf /bpanel/clients/base-client.conf
+RUN chmod +x /bpanel/start.sh
+ENTRYPOINT [ "bash" ]
+CMD [ "/bpanel/start.sh" ]

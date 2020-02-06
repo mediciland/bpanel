@@ -1,6 +1,6 @@
 {
-  "name": "@bpanel/bpanel",
-  "version": "1.0.1-alpha",
+  "name": "@mediciland/bpanel",
+  "version": "1.0.2",
   "homepage": "https://bpanel.org",
   "description": "GUI application to interact with a Bcoin Bitcoin node",
   "main": "server/index.js",
@@ -28,12 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bpanel-org/bpanel.git"
+    "url": "git@github.com:mediciland/bpanel.git"
   },
   "keywords": [
     "bcoin",
+    "fcoin",
     "bpanel",
     "bitcoin",
+    "flo",
     "GUI"
   ],
   "author": "bpanel",

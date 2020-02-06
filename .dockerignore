@@ -4,3 +4,4 @@ dist
 secrets.env
 node_modules
 webapp/version.json
+webapp/plugins/local/*
