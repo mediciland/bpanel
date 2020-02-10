@@ -196,6 +196,7 @@ will increase speed of future builds, so please be patient.'
 
   const socketManager = new SocketManager({
     noAuth: true,
+    host: '0.0.0.0',
     port: bsockPort,
     logger,
     ports

@@ -6,7 +6,6 @@ FROM mhart/alpine-node:latest AS base
 # temporarily update npm manually
 # because of bug introduced in npm 6.0.0
 
-EXPOSE 5000
 RUN mkdir -p /bpanel/src/app/dist
 RUN mkdir -p /data/clients
 
@@ -44,6 +43,8 @@ RUN npm install budp
 
 # Bundle app
 FROM base
+EXPOSE 5000 5001 8000
+EXPOSE 8000/udp
 COPY --from=build /bpanel/src/app/node_modules /bpanel/src/app/node_modules
 COPY pkg.js /bpanel/src/app/pkg.js
 COPY vendor /bpanel/src/app/vendor
@@ -54,6 +55,7 @@ COPY webapp /bpanel/src/app/webapp
 COPY ci/config/start.sh /bpanel/start.sh
 RUN mkdir -p /bpanel/clients
 COPY ci/config/base-client.conf /bpanel/clients/base-client.conf
+COPY ci/config/default-whitelist.js /bpanel/default-whitelist.js
 RUN chmod +x /bpanel/start.sh
 ENTRYPOINT [ "bash" ]
 CMD [ "/bpanel/start.sh" ]
