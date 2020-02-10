@@ -9,7 +9,7 @@ export default class extends PureComponent {
     super(props);
     const { customChildren = [], paths } = props;
     this.routes = customChildren.map(({ Component, metadata }) => {
-      const { name } = metadata;
+      const { name, route } = metadata;
 
       let pathName = paths[name]; // will be a unique path from state
 
@@ -20,7 +20,7 @@ export default class extends PureComponent {
         }
         return (
           <Route
-            path={`/${pathName}`}
+            path={`/${route || pathName}`}
             key={`nav-${name}`}
             render={pathProps => this.childRoute(Component, name, pathProps)} // using render so we can pass props
           />

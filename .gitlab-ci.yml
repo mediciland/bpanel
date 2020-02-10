@@ -1,0 +1,38 @@
+image: docker:stable
+
+stages:
+  - build
+  - publish
+
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  DOCKER_HUB_NAME: mediciland/bpanel
+
+services:
+  - docker:dind
+
+before_script:
+  - docker login -u $dockerhub_user -p $dockerhub_pass
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+Build (master):
+  stage: build
+  script:
+    - docker build -t "$DOCKER_HUB_NAME":next . 
+    - docker push "$DOCKER_HUB_NAME":next
+  only:
+    - master
+
+Push to Docker Hub:
+  stage: publish
+  script:
+    - docker pull "$DOCKER_HUB_NAME":next
+    - docker tag "$DOCKER_HUB_NAME":next "$DOCKER_HUB_NAME:$CI_COMMIT_TAG"
+    - docker push "$DOCKER_HUB_NAME:$CI_COMMIT_TAG"
+    - docker tag "$DOCKER_HUB_NAME:$CI_COMMIT_TAG" "$DOCKER_HUB_NAME":latest
+    - docker push "$DOCKER_HUB_NAME":latest
+  only:
+    - tags
+  except:
+    - branches

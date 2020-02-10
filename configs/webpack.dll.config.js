@@ -13,6 +13,7 @@ module.exports = {
       'bcoin/lib/bcoin-browser',
       'bcash/lib/bcoin-browser',
       'hsd/lib/hsd-browser',
+      'fcoin/lib/bcoin-browser',
       'bledger/lib/bledger-browser',
       'bmultisig/lib/bmultisig-browser',
       'hs-client',
@@ -60,6 +61,7 @@ module.exports = {
       bcoin$: `${MODULES_DIR}/bcoin/lib/bcoin-browser`,
       bcash$: `${MODULES_DIR}/bcash/lib/bcoin-browser`,
       hsd$: `${MODULES_DIR}/hsd/lib/hsd-browser`,
+      fcoin$: `${MODULES_DIR}/fcoin/lib/bcoin-browser`,
       'hs-client': `${MODULES_DIR}/hs-client`
     }
   },

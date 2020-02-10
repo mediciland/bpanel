@@ -1,6 +1,6 @@
 {
-  "name": "@bpanel/bpanel",
-  "version": "1.0.1-alpha",
+  "name": "@mediciland/bpanel",
+  "version": "1.0.2",
   "homepage": "https://bpanel.org",
   "description": "GUI application to interact with a Bcoin Bitcoin node",
   "main": "server/index.js",
@@ -28,12 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bpanel-org/bpanel.git"
+    "url": "git@github.com:mediciland/bpanel.git"
   },
   "keywords": [
     "bcoin",
+    "fcoin",
     "bpanel",
     "bitcoin",
+    "flo",
     "GUI"
   ],
   "author": "bpanel",
@@ -44,7 +46,8 @@
   },
   "dependencies": {
     "@bpanel/bpanel-ui": "0.0.19",
-    "@bpanel/bpanel-utils": "0.1.9",
+    "@bpanel/bpanel-utils": "git+https://github.com/mediciland/bpanel-utils.git#ACTUM-123",
+    "@oipwg/fclient": "^0.1.7",
     "aphrodite": "1.2.5",
     "autoprefixer": "9.4.5",
     "base64-inline-loader": "1.1.1",
@@ -72,6 +75,7 @@
     "css-loader": "2.1.0",
     "effects-middleware": "1.0.1",
     "express": "4.16.2",
+    "fcoin": "^1.1.3",
     "file-loader": "2.0.0",
     "font-awesome": "4.7.0",
     "hs-client": "~0.0.4",
@@ -83,12 +87,12 @@
     "postcss-loader": "3.0.0",
     "prettier": "1.7.4",
     "prop-types": "15.6.0",
-    "react": "16.6.3",
-    "react-dom": "16.6.3",
-    "react-redux": "5.0.6",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "7.1.3",
     "react-router-dom": "4.3.1",
-    "redux": "3.7.2",
-    "redux-devtools-extension": "2.13.2",
+    "redux": "4.0.5",
+    "redux-devtools-extension": "2.13.8",
     "redux-persist": "5.10.0",
     "redux-thunk": "2.2.0",
     "reselect": "3.0.1",

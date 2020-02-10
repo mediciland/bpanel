@@ -107,7 +107,8 @@ module.exports = async (_config = {}) => {
   const networks = {
     bitcoin: require('bcoin/lib/protocol/networks'),
     bitcoincash: require('bcash/lib/protocol/networks'),
-    handshake: require('hsd/lib/protocol/networks')
+    handshake: require('hsd/lib/protocol/networks'),
+    flo: require('fcoin/lib/protocol/networks')
   };
 
   // Import express middlewares
@@ -195,6 +196,7 @@ will increase speed of future builds, so please be patient.'
 
   const socketManager = new SocketManager({
     noAuth: true,
+    host: '0.0.0.0',
     port: bsockPort,
     logger,
     ports

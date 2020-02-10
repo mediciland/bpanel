@@ -80,3 +80,6 @@ secrets.env
 # tls keys and certs
 **/*.crt
 **/*.key
+
+# local plugins
+webapp/plugins/local
