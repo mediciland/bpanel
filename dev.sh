@@ -11,7 +11,7 @@ docker run -d \
   --mount source=bpanel,target=/data \
   -p 5000:5000 -p 5001:5001 -p 8000:8000 \
   --env CHAIN=flo \
-  --env RPC_HOST=172.16.31.54 \
+  --env RPC_HOST="$HOSTNAME" \
   --env RPC_PASSWORD=password \
   --env NETWORK=regtest \
   --name=bpanel \

@@ -43,7 +43,7 @@ RUN npm install budp
 
 # Bundle app
 FROM base
-EXPOSE 5000 5001 8000
+EXPOSE 80 443 5000 5001 8000
 EXPOSE 8000/udp
 COPY --from=build /bpanel/src/app/node_modules /bpanel/src/app/node_modules
 COPY pkg.js /bpanel/src/app/pkg.js

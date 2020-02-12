@@ -4,7 +4,7 @@
  
 [![Image Pulls](https://img.shields.io/docker/pulls/mediciland/bpanel.svg)](https://hub.docker.com/r/mediciland/bpanel) [![Image Stars](https://img.shields.io/docker/stars/mediciland/bpanel.svg)](https://hub.docker.com/r/mediciland/bpanel)
  
-This image runs the official FLO Core full node and optionally exposes an RPC connection.
+This image runs the bPanel Dashboard software and installs a configurable list of plugins.
  
 ## Available Versions
  
@@ -28,8 +28,9 @@ docker logs -f bpanel
  
 ## Environment Variables
  
-FLO Core uses Environment Variables to allow for configuration settings. You set the Env Variables in your `docker run` startup command. Here are the config settings offered by this image.
+bPanel uses Environment Variables to allow for configuration settings. You set the Env Variables in your `docker run` startup command. Here are the config settings offered by this image.
 
+* **`PORT`**: [`Integer`] The port you wish to host the bPanel web app on (Default `5000`). 
 * **`CHAIN`**: [`flo`|`bitcoin`|`bitcoincash`|`handshake`] The Chain you wish to run on (Default `flo`). 
 * **`NETWORK`**: [`main`|`testnet`|`regtest`] The Chain network you wish to run on (Default `main`).
 * **`RPC_HOST`**: [`String`] The Hostname/IP address of the RPC node to use as your data source
