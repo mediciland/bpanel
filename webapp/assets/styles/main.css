@@ -1,0 +1,11 @@
+:root {
+  /*theme variables*/
+  --primary-color: #222b35;
+  --primary-color-darker: #11181e;
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-light-alpha: rgba(255, 255, 255, 0.15);
+  --color-dark-alpha: rgba(0, 0, 0, 0.15);
+  --font-size-primary: 12px;
+  /*theme variables end*/
+}

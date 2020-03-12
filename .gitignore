@@ -83,3 +83,4 @@ secrets.env
 
 # local plugins
 webapp/plugins/local
+.idea
